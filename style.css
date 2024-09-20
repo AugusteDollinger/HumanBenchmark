@@ -1,0 +1,97 @@
+@font-face {
+    font-family: main;
+    src: url(assets/fonts/Nexa-Heavy.ttf);
+}
+
+* {
+    font-family: main;
+}
+a {
+    text-decoration: none;
+}
+body, p{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(39, 39, 39);
+}
+
+header {
+    background-color: #6439FF;
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+header div {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+header a {
+    color: #00CCDD;
+    padding: 20px;
+    transition: 0.3s;
+}
+header a:hover {
+    background-color:#4e1dff;
+}
+
+#mainBand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+#mainBand img {
+    width: 300px;
+}
+
+#mainBlock img {
+    width: 100px;
+    height: 100px;
+}
+
+#mainBlock {
+    background-color: #6439FF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 3vw 17vw;
+}
+#presentation p{
+    text-align: center;
+    color: #6439FF;
+    margin: 30px;
+    text-shadow: 10px 5px 5px#4e1dff41;
+    font-size: 30px;
+}
+
+#mainBlock article {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background: rgb(39, 39, 39);
+    margin: 3vw 0 0 0;
+    padding: 50px;
+    color: #00CCDD;
+    text-align: center;
+    border-radius: 30px 30px 30px 0;
+    flex-wrap: wrap;
+    transition: bottom 0.5s ease, box-shadow 0.5s;
+    position: relative;
+    bottom: 0;
+    box-shadow: 0;
+    text-shadow: 2px 2px 10px #00cbdd57;
+}
+
+#mainBlock article:hover {
+    bottom: 20px;
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.397);
+}
