@@ -35,4 +35,8 @@ function changeColor() {
 function showTime(n) {
     document.getElementById('reactionTimeColor').style.color = '#6439FF';
     (n+'').length == 1 ? timeText.innerText = `0.0${n}s` : (n+'').length == 2 ? timeText.innerText = `0.${n}s` : (n+'').length == 3 ? timeText.innerText = `${(n+'')[0]}.${(n+'')[1]}${(n+'')[2]}s` : timeText.innerText = "You can't be that slow"
+    document.getElementById('reactionTime').setAttribute('onclick', 'restartReactionTime()')
+}
+function restartReactionTime() {
+    history.go(0)
 }
