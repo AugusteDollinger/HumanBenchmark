@@ -38,5 +38,5 @@ function showTime(n) {
     document.getElementById('reactionTime').setAttribute('onclick', 'restartReactionTime()')
 }
 function restartReactionTime() {
-    history.go(0)
+    location.reload()
 }
