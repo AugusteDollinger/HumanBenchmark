@@ -15,9 +15,11 @@ function stopWatch() {
         time++
         console.log(time)
     }, 10);
-    addEventListener('click', () => {
+    addEventListener('click', clickEvent = function () {
         clearInterval(stopWatchInterval)
         showTime(time)
+        reactionTimeScore(time)
+        removeEventListener('click', clickEvent)
     })
 }
 function timer() {
@@ -40,3 +42,23 @@ function showTime(n) {
 function restartReactionTime() {
     location.reload()
 }
+function reactionTimeScore(n) {
+    let reactionTimeScores = {
+    }
+    if (sessionStorage.getItem('reactionTimeScore')) {
+        let length = []
+        reactionTimeScores = JSON.parse(sessionStorage.getItem('reactionTimeScore'))
+        for (const key in reactionTimeScores) {
+            length.push(key)
+            console.log(reactionTimeScores[key])
+        }
+        console.log(reactionTimeScores)
+        reactionTimeScores[length.length + 1] = n
+        sessionStorage.setItem('reactionTimeScore', JSON.stringify(reactionTimeScores))
+    }
+    else {
+        reactionTimeScores[1] = n
+        console.log(reactionTimeScores)
+        sessionStorage.setItem('reactionTimeScore', JSON.stringify(reactionTimeScores))
+    }
+} 
