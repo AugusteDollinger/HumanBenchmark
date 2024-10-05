@@ -26,6 +26,13 @@ function stopWatch() {
 
 function timer() {
     let timeLeft = Math.floor(Math.random() * 300 + 200);
+    $('#reactionTime').on('click',
+        () => {
+            $('#reactionTime').off('click');
+            setTimeout(() => {$('#reactionTime').on('click', restartReactionTime)}, 1000)
+            clearInterval(timerInterval);
+            $timeText.text("Too early!");
+    });
     const timerInterval = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
@@ -33,6 +40,7 @@ function timer() {
         } else {
             timeLeft--;
         }
+
         console.log(timeLeft);
     }, 10);
 }
@@ -54,11 +62,10 @@ function showTime(n) {
     } else {
         $timeText.text("You can't be that slow");
     }
-    $('#reactionTime').on('click', restartReactionTime);
+    setTimeout(() => {$('#reactionTime').on('click', restartReactionTime)}, 1000)
 }
 
 function restartReactionTime() {
-    console.log('no')
     location.reload();
 }
 
